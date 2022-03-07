@@ -2,6 +2,9 @@
 
 require_once 'Conta.php';
 require_once 'Titular.php';
+require_once 'Pessoa.php';
+require_once 'Funcionario.php';
+require_once 'CPF.php';
 
 $primeiraconta = new Conta(new Titular('123.465.789-10', 'Fabio Silva'));
 $primeiraconta->deposita(500);
