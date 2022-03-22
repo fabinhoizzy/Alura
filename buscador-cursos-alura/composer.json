@@ -1,0 +1,20 @@
+{
+    "name": "fabinhoizzy/buscador-cursos",
+    "description": "Projeto que busca os cursos no site da Alura",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Fabinhoizzy\\BuscadorCursos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "fabinhoizzy",
+            "email": "fabinhoevil16@hotmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.4",
+        "symfony/dom-crawler": "^6.0"
+    }
+}
