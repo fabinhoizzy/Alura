@@ -4,9 +4,9 @@ namespace Alura\DesignPattern\AcoesAoGerarPedido;
 
 use Alura\DesignPattern\Pedido;
 
-class LogGerarPedido
+class LogGerarPedido implements AcaoAposGerarPedido
 {
-    public function executeAcao(Pedido $pedido): void
+    public function executaAcao(Pedido $pedido): void
     {
         echo "Gerando log do Pedido";
     }

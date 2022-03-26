@@ -4,9 +4,9 @@ namespace Alura\DesignPattern\AcoesAoGerarPedido;
 
 use Alura\DesignPattern\Pedido;
 
-class EnviarPedidoPorEmail
+class EnviarPedidoPorEmail implements AcaoAposGerarPedido
 {
-    public function executeAcao(Pedido $pedido): void
+    public function executaAcao(Pedido $pedido): void
     {
         echo "Enviado e-mail de pedido gerado";
     }
