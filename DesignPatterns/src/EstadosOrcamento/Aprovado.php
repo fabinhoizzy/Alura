@@ -6,7 +6,7 @@ use Alura\DesignPattern\Orcamento;
 
 class Aprovado
 {
-    public function calcularDescontoExtra(Orcamento $orcamento)
+    public function calculaDescontoExtra(Orcamento $orcamento): float
     {
         return $orcamento->valor * 0.02;
     }

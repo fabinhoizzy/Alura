@@ -4,12 +4,16 @@ namespace Alura\DesignPattern\EstadosOrcamento;
 
 use Alura\DesignPattern\Orcamento;
 
-class Reprovado
+class Reprovado extends EstadoOrcamento
 {
-    public function calcularDescontoExtra(Orcamento $orcamento)
+    public function calculaDescontoExtra(Orcamento $orcamento): float
     {
         throw new \DomainException(
             'O Orçamento reprovado não pode receber desconto'
         );
+    }
+    public function finaliza(Orcamento $orcamento)
+    {
+       $orcamento->estadoAtual = new Finalizado();
     }
 }
