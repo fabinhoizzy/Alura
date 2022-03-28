@@ -13,6 +13,6 @@ class SemDesconto extends Desconto
 
     public function calculaDesconto(Orcamento $orcamento): float
     {
-       return 0;
+        return 0;
     }
 }

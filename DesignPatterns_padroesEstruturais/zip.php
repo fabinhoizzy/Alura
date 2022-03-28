@@ -1,12 +1,9 @@
 <?php
 
-use Alura\DesignPattern\Orcamento;
-use Alura\DesignPattern\Relatorio\OrcamentoZip;
+require 'vendor/autoload.php';
 
-require_once 'vendor/autoload.php';
-
-$orcamentoZip = new OrcamentoZip();
-$orcamento = new Orcamento();
+$orcamentoZip = new \Alura\DesignPattern\Relatorio\OrcamentoZip();
+$orcamento = new \Alura\DesignPattern\Orcamento();
 $orcamento->valor = 500;
 
 $orcamentoZip->exportar($orcamento);

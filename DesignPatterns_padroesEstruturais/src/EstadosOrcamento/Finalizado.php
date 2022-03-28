@@ -8,13 +8,6 @@ class Finalizado extends EstadoOrcamento
 {
     public function calculaDescontoExtra(Orcamento $orcamento): float
     {
-        throw new \DomainException(
-            'O Orçamento finalizado não pode receber desconto'
-        );
+        throw new \DomainException('Um orçamento finalizado não pode receber desconto');
     }
-    public function finaliza(Orcamento $orcamento)
-    {
-        $orcamento->estadoAtual = new Finalizado();
-    }
-
 }

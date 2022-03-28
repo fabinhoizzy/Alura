@@ -2,13 +2,9 @@
 
 namespace Alura\DesignPattern;
 
-use Traversable;
-
 class ListaDeOrcamentos implements \IteratorAggregate
 {
-    /**
-     * @var $orcamento[]
-     */
+    /** @var Orcamento[] */
     private array $orcamentos;
 
     public function __construct()
@@ -21,7 +17,7 @@ class ListaDeOrcamentos implements \IteratorAggregate
         $this->orcamentos[] = $orcamento;
     }
 
-    public function getIterator(): Traversable
+    public function getIterator()
     {
         return new \ArrayIterator($this->orcamentos);
     }

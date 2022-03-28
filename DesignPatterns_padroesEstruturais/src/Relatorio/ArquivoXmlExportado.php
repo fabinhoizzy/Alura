@@ -2,7 +2,7 @@
 
 namespace Alura\DesignPattern\Relatorio;
 
-class ArquivoXmlExportado
+class ArquivoXmlExportado implements ArquivoExportado
 {
     private string $nomeElementoPai;
 
@@ -13,15 +13,14 @@ class ArquivoXmlExportado
 
     public function salvar(ConteudoExportado $conteudoExportado): string
     {
-        $elementoXml = new \SimpleXMLElement("< {this->nomeElementoPai} />");
+        $elementoXml = new \SimpleXMLElement("<{$this->nomeElementoPai} />");
         foreach ($conteudoExportado->conteudo() as $item => $valor) {
             $elementoXml->addChild($item, $valor);
         }
 
-        $caminhoArquivo = tmpfile();
+        $caminhoArquivo = tempnam(sys_get_temp_dir(), 'xml');
         $elementoXml->asXML($caminhoArquivo);
 
         return $caminhoArquivo;
     }
-
 }
