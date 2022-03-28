@@ -4,12 +4,11 @@ namespace Alura\DesignPattern;
 
 use Alura\DesignPattern\EstadosOrcamento\EmAprovacao;
 use Alura\DesignPattern\EstadosOrcamento\EstadoOrcamento;
-use function PHPUnit\Framework\throwException;
 
 class Orcamento
 {
-    public float $valor;
     public int $quantidadeItens;
+    public float $valor;
     public EstadoOrcamento $estadoAtual;
 
     public function __construct()
@@ -19,7 +18,7 @@ class Orcamento
 
     public function aplicaDescontoExtra()
     {
-        $this->valor -= $this->estadoAtual->calcularDescontoExtra($this);
+        $this->valor -= $this->estadoAtual->calculaDescontoExtra($this);
     }
 
     public function aprova()
