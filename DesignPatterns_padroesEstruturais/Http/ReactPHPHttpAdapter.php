@@ -2,7 +2,7 @@
 
 namespace Alura\DesignPattern\Http;
 
-class ReactPHPHttpAdapter
+class ReactPHPHttpAdapter implements \Alura\DesignPattern\Http\HttpAdapter
 {
     public function post(string $url, array $data = []): void
     {

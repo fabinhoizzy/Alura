@@ -4,5 +4,9 @@
     "psr-4": {
       "Alura\\Solid\\": "src/"
     }
+  },
+  "require": {
+    "ext-simplexml": "*",
+    "ext-zip": "*"
   }
 }
