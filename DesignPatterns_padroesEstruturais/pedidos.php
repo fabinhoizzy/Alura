@@ -11,7 +11,7 @@ $dados = new DadosExtrinsecosPedido(md5('a'), new \DateTimeImmutable());
 
 for ($i = 0; $i < 10000; $i++) {
     $pedido = new Pedido();
-    $pedido->dados = $dados;
+    $pedido->templatePedido = $dados;
     $pedido->orcamento = new Orcamento();
 
     $pedidos[] = $pedido;
