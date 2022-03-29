@@ -9,4 +9,8 @@ class StdoutLogWritter implements LoggerWritter
     {
         echo $mensagemFormatada;
     }
+
+    public function log(string $string, string $string1)
+    {
+    }
 }
