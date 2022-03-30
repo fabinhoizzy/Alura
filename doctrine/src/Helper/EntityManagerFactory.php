@@ -4,13 +4,14 @@ namespace Alura\Doctrine\Helper;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\Tools\Setup;
 
 class EntityManagerFactory
 {
     /**
      * @return EntityManagerInterface
-     * @throws \Doctrine\ORM\ORMException
+     * @throws ORMException
      */
 
     public function getEntityManager(): EntityManagerInterface
