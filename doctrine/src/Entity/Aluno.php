@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @Entity
+ * @Entity(repositoryClass="Alura\Doctrine\Repository\AlunoRepository")
  */
 
 class Aluno
@@ -24,7 +24,7 @@ class Aluno
      */
     private string $nome;
     /**
-     * @OneToMany(targetEntity="Telefone", mappedBy="aluno")
+     * @OneToMany(targetEntity="Telefone", mappedBy="aluno", cascade={"remove", "persist"}, fetch="EAGER")
      */
     private $telefones;
 
@@ -77,6 +77,9 @@ class Aluno
         return $this;
     }
 
+    /**
+     * @return Curso[]
+     */
     public function getCursos(): Collection
     {
         return $this->cursos;
