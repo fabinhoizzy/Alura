@@ -8,7 +8,7 @@ use Alura\Cursos\Infra\EntityManagerCreator;
 /**
  * @property \Doctrine\ORM\EntityRepository|\Doctrine\Persistence\ObjectRepository $repositorioCursos
  */
-class FormularioEdicao implements InterfaceControladorRequisicao
+class FormularioEdicao extends ControllerComHtml implements InterfaceControladorRequisicao
 {
     public function __construct()
     {
@@ -27,7 +27,9 @@ class FormularioEdicao implements InterfaceControladorRequisicao
         }
 
         $curso = $this->repositorioCursos->find($id);
-        $titulo = 'Alterar Curso ' . $curso->getDescricao();
-        require __DIR__ . '/../../view/cursos/formulario.php';
+        echo $this->renderizaHtml('cursos/formulario.php', [
+            'cursos' => $curso,
+            'titulo' => 'Alterar Curso ' . $curso->getDescricao()
+        ]);
     }
 }

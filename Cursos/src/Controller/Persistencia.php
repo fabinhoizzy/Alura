@@ -24,19 +24,21 @@ class Persistencia implements InterfaceControladorRequisicao
             FILTER_SANITIZE_STRING
         );
 
-        $curso = new Curso();
-        $curso->setDescricao($descricao);
-
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
-        if (is_null($id) && $id !== false) {
-            $curso->setId($id);
+        if (!is_null($id) && $id !== false) {
+            $curso = $this->entityManager->find(Curso::class, $id);
+            $curso->setDescricao($descricao);
         } else {
+
+            $curso = new Curso();
+            $curso->setDescricao($descricao);
             $this->entityManager->persist($curso);
-            $this->entityManager->flush();
         }
 
+        $this->entityManager->flush();
 
         header('Location: /listar-cursos', true, 302);
     }
+
 }

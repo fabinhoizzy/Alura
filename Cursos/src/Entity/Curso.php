@@ -2,6 +2,8 @@
 
 namespace Alura\Cursos\Entity;
 
+use Doctrine\ORM\Mapping\Entity;
+
 /**
  * @Entity
  * @Table(name="cursos")
