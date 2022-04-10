@@ -3,13 +3,16 @@
 namespace Alura\Cursos\Controller;
 
 use Alura\Cursos\Entity\Curso;
+use Alura\Cursos\Helper\RenderizadorDeHtmlTrait;
 use Alura\Cursos\Infra\EntityManagerCreator;
 
 /**
  * @property \Doctrine\ORM\EntityRepository|\Doctrine\Persistence\ObjectRepository $repositorioCursos
  */
-class FormularioEdicao extends ControllerComHtml implements InterfaceControladorRequisicao
+class FormularioEdicao  implements InterfaceControladorRequisicao
 {
+    use RenderizadorDeHtmlTrait;
+
     public function __construct()
     {
         $entityManager = (new EntityManagerCreator())->getEntityManager();

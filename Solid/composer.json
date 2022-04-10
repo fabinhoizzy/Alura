@@ -7,6 +7,7 @@
   },
   "require": {
     "ext-simplexml": "*",
-    "ext-zip": "*"
+    "ext-zip": "*",
+    "ext-http": "*"
   }
 }
