@@ -1,20 +1,15 @@
 <?php
 
+use App\Http\Controllers\FileUpload;
+use App\Models\File;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
+
+Route::get('/upload-file', [FileUpload::class, 'createForm'])->name('createForm');
 
 Route::get('/', function () {
-    return view('formulario', ['titulo' => 'Importar Transações']);
+    return view('/welcome');
 });
 
-Route::post('/uploadArquivo', ['name' => 'arquivo'] );
+
